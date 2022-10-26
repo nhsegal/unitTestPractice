@@ -1,0 +1,25 @@
+{
+  "name": "unittestpractice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "jest",
+    "watch": "jest --watch *.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nhsegal/unitTestPractice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nhsegal/unitTestPractice/issues"
+  },
+  "homepage": "https://github.com/nhsegal/unitTestPractice#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.19.4",
+    "eslint": "^8.26.0"
+  }
+}
