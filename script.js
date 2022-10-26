@@ -62,7 +62,17 @@ function caeserCipher(str, shift) {
   return ans
 }
 
-function analyzeArray {
+function analyzeArray(arr) {
+  let average = arr.reduce(
+    (prev, cur) => prev + cur, 
+    0)
+    /arr.length 
+  return ({
+    average//, 
+  //  min, 
+  //  max, 
+  //  length
+  })
 
 }
 

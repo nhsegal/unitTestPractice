@@ -89,3 +89,11 @@ test("wraps", () => {
 test("Leaves punctutation and spacing alone", () => {
   expect(testFunctions.caeserCipher("A fat fox.", 3)).toBe("D idw ira.")
 })
+
+test("Average works correctly", () => {
+  expect(testFunctions.analyzeArray([1,2,3,4]).average).toBeCloseTo(2.5)
+})
+
+test("Average works correctly", () => {
+  expect(testFunctions.analyzeArray([1,2,3,4]).average).toBeCloseTo(2.5)
+})
