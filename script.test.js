@@ -73,3 +73,19 @@ test("Division only accepts numbers", () => {
 test("Division by zero is caught", () => {
   expect(() => testFunctions.calculator.divide(2,0)).toThrow('Cannot divide by zero')
 })
+
+test("No shift returns original str", () => {
+  expect(testFunctions.caeserCipher("Hello", 0)).toBe("Hello") 
+})
+
+test("Shift of 1 returns correctly", () => {
+  expect(testFunctions.caeserCipher("abc", 1)).toBe("bcd") 
+})
+
+test("wraps", () => {
+  expect(testFunctions.caeserCipher("xyz", 2)).toBe("zab")
+})
+
+test("Leaves punctutation and spacing alone", () => {
+  expect(testFunctions.caeserCipher("A fat fox.", 3)).toBe("D idw ira.")
+})
