@@ -3,84 +3,81 @@ function capitalize(str) {
 }
 
 function reverseString(str) {
-  return str.split('').reverse().join('');
+  return str.split("").reverse().join("");
 }
 
 const calculator = {
-  add: (a , b) => {
-    if (isNaN(a) || isNaN(b)){
-      throw new Error('Make sure both inputs are numbers');
+  add: (a, b) => {
+    if (isNaN(a) || isNaN(b)) {
+      throw new Error("Make sure both inputs are numbers");
     }
     return parseFloat(a) + parseFloat(b);
   },
-  subtract: (a , b) => {
-    if (isNaN(a) || isNaN(b)){
-      throw new Error('Make sure both inputs are numbers');
+  subtract: (a, b) => {
+    if (isNaN(a) || isNaN(b)) {
+      throw new Error("Make sure both inputs are numbers");
     }
-    
+
     return parseFloat(a) - parseFloat(b);
   },
-  multiply: (a , b) => {
-    if (isNaN(a) || isNaN(b)){
-      throw new Error('Make sure both inputs are numbers');
+  multiply: (a, b) => {
+    if (isNaN(a) || isNaN(b)) {
+      throw new Error("Make sure both inputs are numbers");
     }
     return parseFloat(a) * parseFloat(b);
   },
-  divide: (a , b) => {
-    if (isNaN(a) || isNaN(b)){
-      throw new Error('Make sure both inputs are numbers');
+  divide: (a, b) => {
+    if (isNaN(a) || isNaN(b)) {
+      throw new Error("Make sure both inputs are numbers");
     }
 
-    if (b == 0){
-      throw new Error('Cannot divide by zero');
+    if (b == 0) {
+      throw new Error("Cannot divide by zero");
     }
 
     return parseFloat(a) / parseFloat(b);
-  }
-} 
+  },
+};
 
 function caeserCipher(str, shift) {
-  let alphabet = 'abcdefghijklmnopqrstuvwxyz'
-  let ans = ''
-  let shifted = ''
-  for (let letter of str){
-    if (!alphabet.includes(letter.toLowerCase())){
+  let alphabet = "abcdefghijklmnopqrstuvwxyz";
+  let ans = "";
+  let shifted = "";
+  for (let letter of str) {
+    if (!alphabet.includes(letter.toLowerCase())) {
       shifted = letter;
-    }
-    else if (letter == letter.toUpperCase()) {
-      letter = letter.toLowerCase(); 
-      let newIndex = (alphabet.indexOf(letter) + shift) % 26
-      shifted = alphabet[newIndex]
-      shifted = shifted.toUpperCase(); 
-    }
-    else {
-      let newIndex = (alphabet.indexOf(letter) + shift) % 26
-      shifted = alphabet[newIndex]
+    } else if (letter == letter.toUpperCase()) {
+      letter = letter.toLowerCase();
+      let newIndex = (alphabet.indexOf(letter) + shift) % 26;
+      shifted = alphabet[newIndex];
+      shifted = shifted.toUpperCase();
+    } else {
+      let newIndex = (alphabet.indexOf(letter) + shift) % 26;
+      shifted = alphabet[newIndex];
     }
     ans = ans + shifted;
   }
-  return ans
+  return ans;
 }
 
 function analyzeArray(arr) {
-  let average = arr.reduce(
-    (prev, cur) => prev + cur, 
-    0)
-    /arr.length 
-  return ({
-    average//, 
-  //  min, 
-  //  max, 
-  //  length
-  })
+  let average = arr.reduce((prev, cur) => prev + cur, 0) / arr.length;
+  let min = arr.reduce((prev, cur) => Math.min(prev, cur), Infinity);
+  let max = arr.reduce((prev, cur) => Math.max(prev, cur), -Infinity);
+  let length = arr.length;
 
+  return {
+    average,
+    min,
+    max,
+   length
+  };
 }
-
 
 module.exports = {
   capitalize,
   reverseString,
   calculator,
   caeserCipher,
-  analyzeArray
+  analyzeArray,
 };

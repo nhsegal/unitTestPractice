@@ -94,6 +94,25 @@ test("Average works correctly", () => {
   expect(testFunctions.analyzeArray([1,2,3,4]).average).toBeCloseTo(2.5)
 })
 
-test("Average works correctly", () => {
-  expect(testFunctions.analyzeArray([1,2,3,4]).average).toBeCloseTo(2.5)
+test("Min works correctly", () => {
+  expect(testFunctions.analyzeArray([1,2,3,4]).min).toBe(1)
 })
+
+test("Max works correctly", () => {
+  expect(testFunctions.analyzeArray([1,2,3,4]).max).toBe(4)
+})
+
+test("Length works correctly", () => {
+  expect(testFunctions.analyzeArray([1,2,3,4]).length).toBe(4)
+})
+
+test("All good",() => {
+  expect(testFunctions.analyzeArray([20,30,40,50])).toEqual(
+    {
+      average: 35,
+      min: 20,
+      max: 50,
+      length: 4
+    }
+    )
+}) 
